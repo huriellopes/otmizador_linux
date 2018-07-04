@@ -12,11 +12,11 @@ InstallSublime() {
  echo -e "[${green} Chave Baixado com Sucesso! ${NC}]\n"
 
  echo -n "Atualizando os pacotes!"
- apt-get update > /dev/null 2>&1
+ sudo apt-get update > /dev/null 2>&1
  echo -e "[${green} Atualizado com sucesso! ${NC}]\n"
 
  echo -n "Instalando o Sublime text"
- apt-get install sublime-text > /dev/null 2>&1
+ sudo apt-get install sublime-text > /dev/null 2>&1
  echo -e "[${green} Sublime instalado com sucesso! ${NC}]\n"
 }
 

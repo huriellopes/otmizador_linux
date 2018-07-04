@@ -5,10 +5,6 @@ red='\033[0;31m'
 green='\033[0;32m'
 NC='\033[0m' # Sem cor
 
-# Variaveis Globais
-
-CFG_MYSQL_ROOT_PWD='root'
-
 # Salvado o diretório atual
 
 PWD=$(pwd);
@@ -20,6 +16,8 @@ source $PWD/funcoes/install_composer.sh
 source $PWD/funcoes/install_mysql.sh
 source $PWD/funcoes/install_php.sh
 source $PWD/funcoes/install_git.sh
+source $PWD/funcoes/install_docker.sh
+source $PWD/funcoes/install_dockercompose.sh
 source $PWD/funcoes/install_completo.sh
 
 echo "========================="
@@ -31,7 +29,9 @@ echo "2. Composer"
 echo "3. MySQL"
 echo "4. PHP"
 echo "5. GIT"
-echo "6. Completo"
+echo "6. Docker"
+echo "7. Docker-Compose"
+echo "8. Completo"
 echo
 echo -n "Qual a opção desejada? "
 read opcao
@@ -59,7 +59,14 @@ case $opcao in
   6) 
      echo "Atualizando!"
      InstallBasics
-     echo "Instalação completa!"
+     InstallDocker ;;
+  7)
+     echo "Atualizando!"
+     InstallBasics
+     InstallDockerCompose ;;
+  8) 
+     echo "Atualizando!"
+     InstallBasics
      InstallCompleta ;;
   *) "Opção desconhecida!" ; echo ; Menu ;;
  esac
